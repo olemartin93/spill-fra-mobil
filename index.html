@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Stjernefanger</title>
+  <meta name="description" content="Fang stjerner og unngå meteorer. Et lite mobilspill.">
+  <meta name="theme-color" content="#0b1026">
+
+  <!-- iOS PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Stjerner">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <div id="score">0</div>
+      <div id="combo"></div>
+    </div>
+    <div class="hud-right">
+      <div id="lives"></div>
+      <button id="pauseBtn" class="icon-btn" aria-label="Pause">❚❚</button>
+    </div>
+  </div>
+
+  <div id="menu" class="overlay">
+    <h1>Stjerne&shy;fanger</h1>
+    <p class="sub">Dra fingeren for å styre.<br>Fang ⭐ – unngå ☄️ – ta 🛡️ for skjold.</p>
+    <p id="best" class="best"></p>
+    <button id="startBtn" class="big-btn">Spill</button>
+    <button id="soundBtn" class="small-btn">Lyd: på</button>
+    <p id="installHint" class="hint hidden">
+      Installer: trykk <b>Del</b> <span class="share">⬆︎</span> i Safari og velg <b>«Legg til på Hjem-skjerm»</b>.
+    </p>
+  </div>
+
+  <div id="pause" class="overlay hidden">
+    <h2>Pause</h2>
+    <button id="resumeBtn" class="big-btn">Fortsett</button>
+    <button id="quitBtn" class="small-btn">Avslutt</button>
+  </div>
+
+  <div id="over" class="overlay hidden">
+    <h2>Game over</h2>
+    <p class="final"><span id="finalScore">0</span> poeng</p>
+    <p id="newBest" class="new-best hidden">Ny rekord! 🎉</p>
+    <p id="overBest" class="best"></p>
+    <button id="retryBtn" class="big-btn">Prøv igjen</button>
+    <button id="menuBtn" class="small-btn">Meny</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
